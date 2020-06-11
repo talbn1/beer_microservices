@@ -16,12 +16,8 @@ import java.util.UUID;
 @Builder
 public class BeerDto {
     private UUID id;
-    private Integer verison;
-    private OffsetDateTime createDate;
-    private OffsetDateTime lastModifiedDate;
     private String beerName;
-    private BeerStyleName beerStyle;
+    private String beerStyle;
     private Long upc;
-    private BigDecimal price;
-    private Integer quantityOnHand;
+
 }
