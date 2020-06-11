@@ -2,12 +2,14 @@ package com.talbn1.beer_microservices.services;
 
 import com.talbn1.beer_microservices.web.model.BeerDto;
 import com.talbn1.beer_microservices.web.model.BeerStyleName;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 /**
  * @author talbn on 6/11/2020
  **/
+@Service
 public class BeerServiceImpl implements BeerService {
     @Override
     public BeerDto getBeerById(UUID beerId) {
@@ -18,4 +20,11 @@ public class BeerServiceImpl implements BeerService {
     public void updateBeer(UUID beerId, BeerDto beerDto) {
 
     }
+
+    @Override
+    public void deleteBeer(UUID beerId) {
+
+    }
+
+
 }
