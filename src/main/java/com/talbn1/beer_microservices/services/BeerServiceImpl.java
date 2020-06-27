@@ -1,7 +1,6 @@
 package com.talbn1.beer_microservices.services;
 
 import com.talbn1.beer_microservices.web.model.BeerDto;
-import com.talbn1.beer_microservices.web.model.BeerStyleName;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -15,12 +14,9 @@ public class BeerServiceImpl implements BeerService {
     public BeerDto getBeerById(UUID beerId) {
         return BeerDto.builder().beerName("galaxy cat").beerStyle("PALE_ALE" ).upc(1245245564L).build();
     }
-
     @Override
     public void updateBeer(UUID beerId, BeerDto beerDto) {
-
     }
-
     @Override
     public void deleteBeer(UUID beerId) {
 
