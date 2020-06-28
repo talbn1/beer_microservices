@@ -1,11 +1,12 @@
 package com.talbn1.beer_microservices.domain;
 
-import com.talbn1.beer_microservices.web.model.v2.BeerStyleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 /**
@@ -13,16 +14,14 @@ import java.util.UUID;
  **/
 
 //This is an example
-//We have created this class to have a calss to map beerDto with with the mapstruct dependency
+//We have created this class to have a class to map beerDto with with the map-struct dependency
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Beer {
+public class Customer {
 
     private UUID id;
-    private String beerName;
-    private BeerStyleEnum beerStyle;
-    private Long upc;
+    private String name;
 }
