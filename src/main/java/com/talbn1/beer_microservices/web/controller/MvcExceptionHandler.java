@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.ConstraintViolationException;
-import java.net.BindException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**

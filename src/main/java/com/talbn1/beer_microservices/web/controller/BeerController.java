@@ -4,6 +4,7 @@ import com.talbn1.beer_microservices.web.model.BeerDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -28,7 +29,7 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity<BeerDto> handlePost(@Valid @RequestBody BeerDto beerDto){
+    public ResponseEntity<BeerDto> handlePost(@Validated @RequestBody BeerDto beerDto){
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location","/api/v1/beer/" + savedDto.getId().toString());
@@ -37,7 +38,7 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId,@Valid @RequestBody BeerDto beerDto){
+    public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId,@Validated @RequestBody BeerDto beerDto){
         beerService.updateBeer(beerId,beerDto);
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
