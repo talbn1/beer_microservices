@@ -11,7 +11,8 @@ import org.mapstruct.Mapper;
 //This interface will create automatically the map between Beer and BeerDTO with @Mapper from mapstruct
 // If we will compile this project and go to target folder we will se that mapstract created a full mapper
 
-@Mapper
+//In addition to @Mapper, we can add another mapper like this example:
+@Mapper(uses = {DateMapper.class})
 public interface BeerMapper {
 
     BeerDto beerToBeerDto(Beer beer);
